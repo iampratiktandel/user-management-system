@@ -1,0 +1,5 @@
+<app-user-form-presentation
+  [user]="user$ | async"
+  (userData)="postUserDetails($event)"
+  (userEditData)="putUserDetails($event)">
+</app-user-form-presentation>

@@ -1,0 +1,49 @@
+<div class="container">
+  <h4 class="display-6 mt-3 text-center"><strong>User List</strong></h4>
+  <hr>
+  <div class="row">
+    <div class="col-2">
+      <button class="btn btn-primary btn-lg mt-2" routerLink="add">+ Create</button> 
+    </div>
+    <div class="col-3">
+      <input class="form-control me-2" type="text" placeholder="Search By Name" [(ngModel)]="searchName">
+    </div>
+    <div class="col-3">
+      <input class="form-control me-2" type="text" placeholder="Search By Department" [(ngModel)]="searchDepartment">
+    </div>
+    <div class="col-3">
+      <input class="form-control me-2" type="text" placeholder="Search By City" [(ngModel)]="searchCity">
+    </div>
+  </div>  
+  <table class="table border border-1 border-secondary rounded mt-3 text-center">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">City</th>
+        <th scope="col">Department</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="align-middle" 
+        *ngFor="let user of userList 
+        | filterByName:searchName
+        | filterByDepartment:searchDepartment
+        | filterByCity:searchCity"
+        appHighlight
+      >
+        <td> {{user.name | titlecase}} </td>
+        <td> {{user.email | lowercase}} </td>
+        <td> {{user.mobile}} </td>
+        <td> {{user.city | titlecase}} </td>
+        <td> {{user.department | titlecase}} </td>
+        <td>
+        <button class="btn btn-secondary border-light" [routerLink]="['edit', user.id]">Edit</button>
+          <button class="btn btn-danger border-light mx-2" (click)="userDeleteId(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

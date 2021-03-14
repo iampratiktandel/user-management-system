@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "name": "pratik tandel",
+      "email": "Pratik1998@gmail.com",
+      "mobile": "9857385732",
+      "city": "Valsad",
+      "gender": "male",
+      "department": "Developer",
+      "hireDate": "2021-03-01",
+      "permanent": true,
+      "id": 1
+    },
+    {
+      "name": "UmAnG TANDEL",
+      "email": "UMANG@GMAIL.COM",
+      "mobile": "9867573823",
+      "city": "Valsad",
+      "gender": "male",
+      "department": "Developer",
+      "hireDate": "2021-03-10",
+      "permanent": true,
+      "id": 2
+    },
+    {
+      "name": "Ali Kapadia",
+      "email": "ali@gmail.com",
+      "mobile": "9876758357",
+      "city": "Valsad",
+      "gender": "male",
+      "department": "Developer",
+      "hireDate": "2021-03-24",
+      "permanent": false,
+      "id": 3
+    },
+    {
+      "name": "Devu Patel",
+      "email": "devu@gmail.com",
+      "mobile": "9876758423",
+      "city": "Surat",
+      "gender": "female",
+      "department": "Software Engineer",
+      "hireDate": "2021-03-10",
+      "permanent": true,
+      "id": 4
+    }
+  ]
+}
