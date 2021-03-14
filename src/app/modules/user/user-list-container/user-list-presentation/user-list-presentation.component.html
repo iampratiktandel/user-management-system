@@ -47,3 +47,25 @@
     </tbody>
   </table>
 </div>
+
+<div class="container pb-5">
+  <form class="col-lg-6 mx-auto" [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3" formArrayName="deliveryAddress">
+      <h2>Address</h2>
+      <div *ngFor="let addr of deliveryAddress.controls; let addressIndex=index" [formGroupName]="addressIndex">
+        <div class="border border-dark p-1">
+          <h6>Address {{addressIndex + 1}}</h6>
+          <p>{{addressForm}}</p>
+          <label>Address</label>
+          <input type="text" class="form-control" formControlName="address" required>
+
+          <p *ngIf="deliveryAddress.length > 1">
+            <button class="mt-2" (click)="deleteAddress(addressIndex)">Delete</button>
+          </p>
+        
+          <button (click)="addAddress()" class="mb-2">Add Address</button> 
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

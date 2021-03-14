@@ -65,7 +65,10 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
   }
 
   public resetUserForm() {
-    this.userForm.reset();
+    this.userForm.reset({
+      'gender': 'Male',
+      'department': 'Developer'
+    });
   }
 
   public userFormSubmit() {

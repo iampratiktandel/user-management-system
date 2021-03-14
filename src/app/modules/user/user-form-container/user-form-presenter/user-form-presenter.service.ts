@@ -25,8 +25,8 @@ export class UserFormPresenterService {
       email: new FormControl('', [ Validators.required, Validators.pattern(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/) ]),
       mobile: new FormControl('', [ Validators.required, Validators.pattern(/^[6-9]\d{9}$/ ) ]),
       city: new FormControl('', Validators.required),
-      gender: new FormControl(''),
-      department: new FormControl(''),
+      gender: new FormControl('Male'),
+      department: new FormControl('Developer'),
       hireDate: new FormControl(''),
       permanent: new FormControl(false)
     });
