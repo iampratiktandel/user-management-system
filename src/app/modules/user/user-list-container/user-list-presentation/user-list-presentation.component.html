@@ -41,11 +41,11 @@
         <td> {{user.city | titlecase}} </td>
         <td> {{user.department | titlecase}} </td>
         <td>
-        <button class="btn btn-secondary border-light" [routerLink]="['edit', user.id]">Edit</button>
+          <button class="btn btn-secondary border-light" [routerLink]="['edit', user.id]">Edit</button>
           <button class="btn btn-danger border-light mx-2" (click)="userDeleteId(user.id)">Delete</button>
+          <button class="btn btn-info text-dark border-light" (click)="viewUserDetails(user)">Details</button>
         </td>
       </tr>
-    </tbody>
   </table>
 </div>
 

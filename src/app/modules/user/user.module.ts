@@ -9,16 +9,29 @@ import { UserFormPresentationComponent } from './user-form-container/user-form-p
 import { UserListPresentationComponent } from './user-list-container/user-list-presentation/user-list-presentation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UserDetailsComponent } from './user-list-container/user-list-presentation/user-details/user-details.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
-  declarations: [UserComponent, UserListContainerComponent, UserFormContainerComponent, UserFormPresentationComponent, UserListPresentationComponent],
+  declarations: [
+    UserComponent, 
+    UserListContainerComponent, 
+    UserFormContainerComponent, 
+    UserFormPresentationComponent, 
+    UserListPresentationComponent, 
+    UserDetailsComponent
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    OverlayModule,
     SharedModule
+  ],
+  entryComponents: [
+    UserDetailsComponent
   ]
 })
 export class UserModule { }

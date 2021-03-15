@@ -51,10 +51,12 @@ export class UserListPresentationComponent implements OnInit {
     })
   }
 
+  /* for delete */
   public userDeleteId(id: number){
     this._userListPresenterService.sendUserDeleteId(id);
   }
 
+  /* for adding address */
   addAddress() {
     this.addresses.push(this.addressForm.value);
     this.addressForm.reset();
@@ -62,5 +64,10 @@ export class UserListPresentationComponent implements OnInit {
 
   trackByUserName(index: number, user: any): string {
     return user.name;
+  }
+
+  /* for opening overlay */
+  viewUserDetails(user: User) {
+    this._userListPresenterService.openUserOverlay(user)
   }
 }

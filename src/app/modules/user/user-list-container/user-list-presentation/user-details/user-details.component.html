@@ -1,0 +1,12 @@
+<div class="card text-secondary" style="width: 25rem;">
+  <div class="card-body">
+    <h4 class="card-title text-center">User Details </h4>
+    <p class="card-text mb-2 rounded"><strong>Name:</strong> {{userData.name | titlecase}}</p>
+    <p class="card-text mb-2 rounded"><strong>Age: </strong> {{userData.email | lowercase}}</p>
+    <p class="card-text mb-2 rounded"><strong>Mobile: </strong>{{userData.mobile}}</p>
+    <p class="card-text mb-2 rounded"><strong>City: </strong>{{userData.city | titlecase}}</p>
+    <p class="card-text mb-2 rounded"><strong>Gender: </strong>{{userData.gender | titlecase}}</p>
+    <p class="card-text mb-2 rounded"><strong>Department: </strong>{{userData.department | titlecase}}</p>
+    <p class="card-text mb-2 rounded"><strong>Hire Date: </strong>{{userData.hireDate | date:'longDate'}}</p>
+  </div>
+</div>
