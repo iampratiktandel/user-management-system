@@ -34,7 +34,7 @@ export class UserFormPresenterService {
 
   public userFormDetails(userForm: FormGroup) {
     if(userForm.valid) {
-      alert('User Added');
+      // alert('User Added');
       this.userData.next(userForm.value);
     }
   }

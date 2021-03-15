@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { User } from 'src/app/core/models/user.model';
 import { UserFormPresenterService } from '../user-form-presenter/user-form-presenter.service';
@@ -7,11 +7,14 @@ import { UserFormPresenterService } from '../user-form-presenter/user-form-prese
   selector: 'app-user-form-presentation',
   templateUrl: './user-form-presentation.component.html',
   styleUrls: ['./user-form-presentation.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [UserFormPresenterService]
 })
 export class UserFormPresentationComponent implements OnInit, OnDestroy {
 
   private _user: User;
+
+  /* for switching add and edit button */
   public canEdit: boolean = false;
 
   /* getter and setter for user data */
@@ -27,7 +30,7 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
     return this._user;
   }
 
-
+  /* EventEmitter for add and edit data */
   @Output() userData: EventEmitter<User> = new EventEmitter<User>();
   @Output() userEditData: EventEmitter<User> = new EventEmitter<User>();
 
@@ -60,10 +63,12 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
     this._userFormPresenterService.canEdit.next(false);
   }
 
+  /* get form controls for validation */
   get userFormControl(){
     return this.userForm.controls;
   }
 
+  /* reset user form */
   public resetUserForm() {
     this.userForm.reset({
       'gender': 'Male',

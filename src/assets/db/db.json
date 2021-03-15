@@ -54,6 +54,28 @@
       "hireDate": "2021-03-18",
       "permanent": false,
       "id": 5
+    },
+    {
+      "name": "Yashvi Patel",
+      "email": "yashvi@gmail.com",
+      "mobile": "9877543532",
+      "city": "Dungri",
+      "gender": "Female",
+      "department": "Software Engineer",
+      "hireDate": "2021-03-04",
+      "permanent": true,
+      "id": 6
+    },
+    {
+      "name": "Shivam Mistry",
+      "email": "shivam@gmail.com",
+      "mobile": "9874534532",
+      "city": "Valsad",
+      "gender": "Male",
+      "department": "Software Engineer",
+      "hireDate": "2021-03-06",
+      "permanent": true,
+      "id": 7
     }
   ]
 }

@@ -5,7 +5,8 @@
 
 <ng-container *ngIf="(userList$ | async ) as userList">
   <app-user-list-presentation
-  [userList]="userList" 
-  (deleteId)="deleteUserDetails($event)">
+    [userList]="userList" 
+    (deleteId)="deleteUserDetails($event)"
+  >
   </app-user-list-presentation>
 </ng-container>

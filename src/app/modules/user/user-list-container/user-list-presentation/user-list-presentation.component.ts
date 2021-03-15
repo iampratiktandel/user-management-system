@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/core/models/user.model';
 import { UserListPresenterService } from '../user-list-presenter/user-list-presenter.service';
 
@@ -7,12 +7,14 @@ import { UserListPresenterService } from '../user-list-presenter/user-list-prese
   selector: 'app-user-list-presentation',
   templateUrl: './user-list-presentation.component.html',
   styleUrls: ['./user-list-presentation.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [UserListPresenterService]
 })
 export class UserListPresentationComponent implements OnInit {
 
   private _userList: User[] = [];
 
+  /* for filtering data */
   public searchName: string = '';
   public searchDepartment: string = '';
   public searchCity: string = '';
@@ -50,31 +52,31 @@ export class UserListPresentationComponent implements OnInit {
     this._userListPresenterService.sendUserDeleteId(id);
   }
 
-  addressForm = this._fb.group({
-    deliveryAddress: this._fb.array([
-      this._fb.group({
-        address: [null]
-      })
-    ])
-  });
+  // addressForm = this._fb.group({
+  //   deliveryAddress: this._fb.array([
+  //     this._fb.group({
+  //       address: [null]
+  //     })
+  //   ])
+  // });
 
-  get deliveryAddress() {
-    return this.addressForm.get('deliveryAddress') as FormArray;
-  }
+  // get deliveryAddress() {
+  //   return this.addressForm.get('deliveryAddress') as FormArray;
+  // }
 
-  onSubmit() {
-    console.log(this.addressForm.value);
-  }
+  // onSubmit() {
+  //   console.log(this.addressForm.value);
+  // }
 
-  addAddress() {
-    this.deliveryAddress.push(
-      this._fb.group({
-        address: [null],
-      })
-    );
-  }
+  // addAddress() {
+  //   this.deliveryAddress.push(
+  //     this._fb.group({
+  //       address: [null],
+  //     })
+  //   );
+  // }
 
-  deleteAddress(index: number) {
-    this.deliveryAddress.removeAt(index);
-  }
+  // deleteAddress(index: number) {
+  //   this.deliveryAddress.removeAt(index);
+  // }
 }
