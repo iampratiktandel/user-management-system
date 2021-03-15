@@ -11,11 +11,11 @@ import { UserFormPresenterService } from '../user-form-presenter/user-form-prese
 })
 export class UserFormPresentationComponent implements OnInit, OnDestroy {
 
-  private _user: User | null;
+  private _user: User;
   public canEdit: boolean = false;
 
   /* getter and setter for user data */
-  @Input() public set user(value: User | null) {
+  @Input() public set user(value: User) {
     if(value) {
       this._user = value;
       this.setUserDetails(value);
@@ -23,7 +23,7 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
     }
   }
 
-  public get user(): User | null {
+  public get user(): User {
     return this._user;
   }
 
@@ -35,7 +35,7 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
 
   constructor(private _userFormPresenterService: UserFormPresenterService) {
     // this.userForm = this._userFormPresenterService.bindUserForm();
-    this._user = null;
+    this._user = new User();
   }
 
   ngOnInit(): void {

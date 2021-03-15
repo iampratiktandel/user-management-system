@@ -1,4 +1,11 @@
-<app-user-list-presentation
+<!-- <app-user-list-presentation
   [userList]="userList$ | async" 
   (deleteId)="deleteUserDetails($event)">
-</app-user-list-presentation>
+</app-user-list-presentation> -->
+
+<ng-container *ngIf="(userList$ | async ) as userList">
+  <app-user-list-presentation
+  [userList]="userList" 
+  (deleteId)="deleteUserDetails($event)">
+  </app-user-list-presentation>
+</ng-container>

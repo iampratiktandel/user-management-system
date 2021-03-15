@@ -18,13 +18,13 @@ export class UserListPresentationComponent implements OnInit {
   public searchCity: string = '';
 
   /* getter and setter for list of users */
-  @Input() public set userList(usersData: User[] | null) {
+  @Input() public set userList(usersData: User[] ) {
     if(usersData) {
       this._userList = usersData;
     }
   }
 
-  public get userList(): User[] | null {
+  public get userList(): User[] {
     return this._userList;
   }
 
