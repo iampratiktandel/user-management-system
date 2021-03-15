@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { Address } from 'src/app/core/models/address.model';
 import { User } from 'src/app/core/models/user.model';
 import { UserListPresenterService } from '../user-list-presenter/user-list-presenter.service';
@@ -11,9 +12,10 @@ import { UserListPresenterService } from '../user-list-presenter/user-list-prese
   changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [UserListPresenterService]
 })
-export class UserListPresentationComponent implements OnInit {
+export class UserListPresentationComponent implements OnInit, OnDestroy {
 
   private _userList: User[] = [];
+  subscription: Subscription = new Subscription;
 
   /* for filtering data */
   public searchName: string = '';
@@ -22,7 +24,7 @@ export class UserListPresentationComponent implements OnInit {
 
   /* for addressForm */
   addressForm: FormGroup;
-  newAddress: string = '';
+  // newAddress: string = '';
   addresses: Address[] = [];
 
 
@@ -46,9 +48,15 @@ export class UserListPresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._userListPresenterService.userId$.subscribe((userId) => {
+    var deleteSubscription$ = this._userListPresenterService.userId$.subscribe((userId) => {
       this.deleteId.emit(userId);
     })
+
+    this.subscription.add(deleteSubscription$)
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   /* for delete */

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { User } from 'src/app/core/models/user.model';
 import { UserFormPresenterService } from '../user-form-presenter/user-form-presenter.service';
 
@@ -13,6 +14,7 @@ import { UserFormPresenterService } from '../user-form-presenter/user-form-prese
 export class UserFormPresentationComponent implements OnInit, OnDestroy {
 
   private _user: User;
+  subscription: Subscription = new Subscription;
 
   /* for switching add and edit button */
   public canEdit: boolean = false;
@@ -42,17 +44,20 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._userFormPresenterService.userData$.subscribe(
+    var addSubscription$ = this._userFormPresenterService.userData$.subscribe(
       (userData: User) => {
         this.userData.emit(userData)
       }
     )
 
-    this._userFormPresenterService.userEditData$.subscribe(
+    var editSubscription$ = this._userFormPresenterService.userEditData$.subscribe(
       (userData: User) => {
         this.userEditData.emit(userData)
       }
     )
+
+    this.subscription.add(addSubscription$)
+    this.subscription.add(editSubscription$)
 
     this._userFormPresenterService.canEdit.subscribe(res => {
       this.canEdit = res;
@@ -60,6 +65,7 @@ export class UserFormPresentationComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.subscription.unsubscribe();
     this._userFormPresenterService.canEdit.next(false);
   }
 

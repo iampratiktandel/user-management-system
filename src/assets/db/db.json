@@ -43,17 +43,6 @@
       "hireDate": "2021-03-10",
       "permanent": true,
       "id": 4
-    },
-    {
-      "name": "Shivam Mistry",
-      "email": "shivam@gmail.com",
-      "mobile": "9588353535",
-      "city": "Vapi",
-      "gender": "Male",
-      "department": "Developer",
-      "hireDate": "2021-03-18",
-      "permanent": false,
-      "id": 5
     }
   ]
 }
