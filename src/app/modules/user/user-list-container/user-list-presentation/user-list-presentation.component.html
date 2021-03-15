@@ -47,6 +47,9 @@
         </td>
       </tr>
   </table>
+  <div class="d-flex justify-content-center">
+    <app-pagination [totalRecords]="23" [recordsPerPage]="5" (onPageChange)="displayActivePage($event)"></app-pagination> 
+  </div>
 </div>
 
 <div class="container p-3 border border-secondary">
@@ -65,6 +68,6 @@
     </div>
     <div class="col-3">
       <button class="btn btn-secondary" [disabled]="!addressForm.valid">Add</button>
-    </div>
+    </div> 
   </form>
 </div>

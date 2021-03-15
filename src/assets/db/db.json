@@ -43,6 +43,17 @@
       "hireDate": "2021-03-10",
       "permanent": true,
       "id": 4
+    },
+    {
+      "name": "Shivam Mistry",
+      "email": "shivam@gmail.com",
+      "mobile": "9865434322",
+      "city": "Navsari",
+      "gender": "Male",
+      "department": "Accountant",
+      "hireDate": "2021-03-12",
+      "permanent": true,
+      "id": 5
     }
   ]
 }

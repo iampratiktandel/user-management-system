@@ -78,4 +78,12 @@ export class UserListPresentationComponent implements OnInit, OnDestroy {
   viewUserDetails(user: User) {
     this._userListPresenterService.openUserOverlay(user)
   }
+
+
+  /* pagination */
+  activePage = 1;
+
+  displayActivePage(activePageNumber: number): void {
+    this.activePage = activePageNumber;
+  }
 }
