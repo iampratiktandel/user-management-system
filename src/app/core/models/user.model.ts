@@ -10,14 +10,5 @@ export class User {
         public hireDate? : string,
         public permanent? : boolean
     ) {
-        // this.id = id
-        // this.name = '',
-        // this.email = '',
-        // this.mobile = '',
-        // this.city = '',
-        // this.gender = '',
-        // this.department = '',
-        // this.hireDate = '',
-        // this.permanent = false
     }
 }

@@ -16,11 +16,9 @@ export class UserListPresenterService {
     this.userId.next(id);
   }
 
-  // public bindAddressForm(): FormGroup {
-  //   return new FormGroup({
-  //     addresses: new FormArray([
-  //       new FormControl(null)
-  //     ])
-  //   })
-  // }
+  public bindAddressForm(): FormGroup {
+    return new FormGroup({
+      address: new FormControl('')
+    })
+  }
 }

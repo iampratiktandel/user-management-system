@@ -28,10 +28,11 @@
     </thead>
     <tbody>
       <tr class="align-middle" 
-        *ngFor="let user of userList 
+        *ngFor="let user of userList
         | filterByName:searchName
         | filterByDepartment:searchDepartment
-        | filterByCity:searchCity"
+        | filterByCity:searchCity 
+        trackBy: trackByUserName"
         appHighlight
       >
         <td> {{user.name | titlecase}} </td>
@@ -48,24 +49,22 @@
   </table>
 </div>
 
-<div class="container pb-5">
-  <!-- <form class="col-lg-6 mx-auto" [formGroup]="addressForm" (ngSubmit)="onSubmit()">
-    <div class="mb-3" formArrayName="deliveryAddress">
-      <h2>Address</h2>
-      <div *ngFor="let addr of deliveryAddress.controls; let addressIndex=index" [formGroupName]="addressIndex">
-        <div class="border border-dark p-1">
-          <h6>Address {{addressIndex + 1}}</h6>
-          <p>{{addressForm}}</p>
-          <label>Address</label>
-          <input type="text" class="form-control" formControlName="address" required>
-
-          <p *ngIf="deliveryAddress.length > 1">
-            <button class="mt-2" (click)="deleteAddress(addressIndex)">Delete</button>
-          </p>
-        
-          <button (click)="addAddress()" class="mb-2">Add Address</button> 
+<div class="container p-3 border border-secondary">
+  <h1>Add Address</h1>
+  <form class="row mx-auto" [formGroup]="addressForm" (ngSubmit)="addAddress()">
+    <div class="mb-3">
+      <ng-container *ngIf="addresses">
+        <div *ngFor="let addr of addresses; index as i">
+          <h6>Address {{i + 1}}</h6>
+          <p>{{addr.address}}</p>
         </div>
-      </div>
+      </ng-container>
     </div>
-  </form> -->
+    <div class="col-6 mb-3">
+      <input type="text" class="form-control" required formControlName="address">
+    </div>
+    <div class="col-3">
+      <button class="btn btn-secondary" [disabled]="!addressForm.valid">Add</button>
+    </div>
+  </form>
 </div>

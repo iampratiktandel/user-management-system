@@ -7,7 +7,7 @@
       "city": "Valsad",
       "gender": "Male",
       "department": "Developer",
-      "hireDate": "2021-03-01",
+      "hireDate": "2021-03-05",
       "permanent": true,
       "id": 1
     },
@@ -45,37 +45,15 @@
       "id": 4
     },
     {
-      "name": "Shivani Patel",
-      "email": "shivani@gmail.com",
-      "mobile": "9867538345",
-      "city": "Mumbai",
-      "gender": "Female",
-      "department": "Accountant",
-      "hireDate": "2021-03-18",
-      "permanent": false,
-      "id": 5
-    },
-    {
-      "name": "Yashvi Patel",
-      "email": "yashvi@gmail.com",
-      "mobile": "9877543532",
-      "city": "Dungri",
-      "gender": "Female",
-      "department": "Software Engineer",
-      "hireDate": "2021-03-04",
-      "permanent": true,
-      "id": 6
-    },
-    {
       "name": "Shivam Mistry",
       "email": "shivam@gmail.com",
-      "mobile": "9874534532",
-      "city": "Valsad",
+      "mobile": "9588353535",
+      "city": "Vapi",
       "gender": "Male",
-      "department": "Software Engineer",
-      "hireDate": "2021-03-06",
-      "permanent": true,
-      "id": 7
+      "department": "Developer",
+      "hireDate": "",
+      "permanent": false,
+      "id": 5
     }
   ]
 }

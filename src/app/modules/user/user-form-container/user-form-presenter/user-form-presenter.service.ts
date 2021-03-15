@@ -28,7 +28,7 @@ export class UserFormPresenterService {
       gender: new FormControl('Male'),
       department: new FormControl('Developer'),
       hireDate: new FormControl(''),
-      permanent: new FormControl('')
+      permanent: new FormControl(false)
     });
   }
 
