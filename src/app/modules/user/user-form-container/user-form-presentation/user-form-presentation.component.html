@@ -10,6 +10,9 @@
 				<div *ngIf="userFormControl.name.errors?.required" class="text-danger">
 					Please provide your name.
 				</div>
+				<div *ngIf="userFormControl.name.errors?.pattern" class="text-danger">
+					Name should not contain numbers.
+				</div>
 			</div>
 			<!-- /Validation -->
 		</div>
@@ -51,6 +54,9 @@
 			<div *ngIf="(userFormControl.city.dirty || userFormControl.city.touched) && userFormControl.city.invalid" class="alert alert-danger p-1">
 				<div *ngIf="userFormControl.city.errors?.required" class="text-danger">
 					Please provide your city.
+				</div>
+				<div *ngIf="userFormControl.city.errors?.pattern" class="text-danger">
+					City should not contain numbers.
 				</div>
 			</div>
 			<!-- /Validation -->

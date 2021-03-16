@@ -47,9 +47,14 @@
         </td>
       </tr>
   </table>
-  <div class="d-flex justify-content-center">
-    <app-pagination [totalRecords]="23" [recordsPerPage]="5" (onPageChange)="displayActivePage($event)"></app-pagination> 
-  </div>
+
+  <ul class="pagination d-flex justify-content-center">
+    <li class="page-item"><a class="page-link">Previous</a></li>
+    <li class="page-item"><a class="page-link">1</a></li>
+    <li class="page-item"><a class="page-link">2</a></li>
+    <li class="page-item"><a class="page-link">3</a></li>
+    <li class="page-item"><a class="page-link">Next</a></li>
+  </ul>
 </div>
 
 <div class="container p-3 border border-secondary">
@@ -68,6 +73,6 @@
     </div>
     <div class="col-3">
       <button class="btn btn-secondary" [disabled]="!addressForm.valid">Add</button>
-    </div> 
+    </div>
   </form>
 </div>

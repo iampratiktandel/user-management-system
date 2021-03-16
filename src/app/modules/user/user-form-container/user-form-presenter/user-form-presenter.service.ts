@@ -21,10 +21,10 @@ export class UserFormPresenterService {
 
   public bindUserForm(): FormGroup {
     return new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl('', [ Validators.required, Validators.pattern(/^[a-zA-Z ]*$/) ]),
       email: new FormControl('', [ Validators.required, Validators.pattern(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/) ]),
       mobile: new FormControl('', [ Validators.required, Validators.pattern(/^[6-9]\d{9}$/ ) ]),
-      city: new FormControl('', Validators.required),
+      city: new FormControl('', [ Validators.required, Validators.pattern(/^[a-zA-Z ]*$/) ]),
       gender: new FormControl('Male'),
       department: new FormControl('Developer'),
       hireDate: new FormControl(''),
